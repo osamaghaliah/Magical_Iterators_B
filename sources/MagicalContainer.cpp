@@ -1,6 +1,7 @@
 #include "MagicalContainer.hpp"
 
 using namespace ariel;
+
 // Abbreviations - for reading convenience.
 using MC_AI = MagicalContainer::AscendingIterator;
 using MC_SCI = MagicalContainer::SideCrossIterator;

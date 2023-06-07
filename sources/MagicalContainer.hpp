@@ -41,7 +41,7 @@ namespace ariel {
         void removeElement(int element);
         unsigned int size() const;
         bool isPrime(int number);
-        // Maintaining the prime numbers addresses after adding or removing an element from primeElements vector.
+        // Maintaining the prime elements addresses after adding or removing an element from primeElements vector.
         void maintainAddresses();
 
         /*
