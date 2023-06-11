@@ -175,7 +175,7 @@ int& MC_SCI::operator * () const {
 
 MC_SCI& MC_SCI::operator ++ () {
     // Handling a possible extreme case - the current position may be "out of bounds".
-    if (this->position == this->end().position) {
+    if (this->position >= this->end().position) {
         throw runtime_error("The iterator's position has exceeded its limit.");
     } else {
         unsigned int barrier = this->container->ascendedElements.size();
@@ -194,7 +194,7 @@ MC_SCI& MC_SCI::operator ++ () {
 }
 
 MC_SCI& MC_SCI::operator = (const MC_SCI& sideCrossIterator) {
-    // Handling a possible extreme case.
+    // Handling a possible extreme case - iterators' elements vectors are not the same.
     if (this->container->elements != sideCrossIterator.container->elements) {
         throw runtime_error("Assigning a different container for an iterator is NOT allowed.");
     } else {
@@ -245,7 +245,7 @@ int& MC_PI::operator * () const {
 }
 
 MC_PI& MC_PI::operator ++ () {
-    // Handling a possible extreme case.
+    // Handling a possible extreme case - the current position may be "out of bounds".
     if (this->position >= this->end().position) {
         throw runtime_error("The iterator's position has exceeded its limit.");
     } else {
@@ -255,7 +255,7 @@ MC_PI& MC_PI::operator ++ () {
 }
 
 MC_PI& MC_PI::operator = (const MC_PI& primeIterator) {
-    // Handling a possible extreme case.
+    // Handling a possible extreme case - iterators' elements vectors are not the same.
     if (this->container->elements != primeIterator.container->elements) {
         throw runtime_error("Assigning a different container for an iterator is NOT allowed.");
     } else {
